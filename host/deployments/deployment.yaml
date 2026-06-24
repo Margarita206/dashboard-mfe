@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: host-mfe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: host-mfe
+  template:
+    metadata:
+      labels:
+        app: host-mfe
+    spec:
+      containers:
+        - name: host-mfe
+          image: 192.168.101.30:8443/server-ui-v2-image/host-mfe
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          env:
+            - name: "VITE_MFE_SOURCES_IP"
+              value: "http://192.168.101.27:31130/"
+          volumeMounts:
+            - name: tls-cert
+              mountPath: /etc/nginx/certs
+              readOnly: true
+      volumes:
+        - name: tls-cert
+          secret:
+            secretName: host-mfe-tls
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: host-mfe
+spec:
+  type: NodePort
+  selector:
+    app: host-mfe
+  ports:
+    - name: http
+      port: 443
+      targetPort: 443
+      nodePort: 31111

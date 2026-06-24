@@ -1,0 +1,16 @@
+# Игнорировать node_modules
+node_modules/
+
+# Игнорировать deployments
+deployments/
+
+# Игнорировать dist
+dist/
+
+# Игнорировать yarn.lock
+yarn.lock
+
+# Дополнительно можно игнорировать другие файлы:
+.git/
+.env
+*.log

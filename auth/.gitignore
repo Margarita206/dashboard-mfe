@@ -6,11 +6,12 @@
 # Dist
 node_modules
 dist/
-
-# Profile
-.rspack-profile-*/
+yarn.lock
 
 # IDE
 .vscode/*
 !.vscode/extensions.json
 .idea
+
+host/.npmrc
+.npmrc
