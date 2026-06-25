@@ -1,20 +1,30 @@
-import React, {useEffect} from 'react'
+import React, {lazy} from 'react'
 import './index.css'
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import Dashboard from "./mfes/Dashboard";
 
+
+const Dashboard = lazy(() => import("./mfes/Dashboard.tsx"));
 
 const App = () => {
 
 
     return (
-        <Router>
+        <section>
             <Routes>
-                <Route path={'/dashboard'} element={<Dashboard/>}/>
+                <Route index element={
+                    <React.Suspense fallback={<div>Loading...</div>}>
+                        <Dashboard/>
+                    </React.Suspense>
+                }/>
+
+                <Route path="*" element={<h2>Page Not Found</h2>} />
             </Routes>
 
-        </Router>
-        )
+
+
+        </section>
+
+    )
 
 }
 export default App
