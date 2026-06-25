@@ -80,7 +80,7 @@ export default defineConfig({
             filename: 'remoteEntry.js',
             remotes: {},
             exposes: {
-                './App': './src/components/App.tsx' // Здесь экспортируются компоненты из Вашего приложения во вшешнюю систему
+                './App': './src/App.tsx' // Здесь экспортируются компоненты из Вашего приложения во вшешнюю систему
             },
             shared: {
                 '@emotion/react': {singleton: true, requiredVersion: dependencies['@emotion/react']},

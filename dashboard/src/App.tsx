@@ -1,4 +1,4 @@
-import '../index.css'
+import './index.css'
 import Dashboard from "./Dashboard.tsx";
 
 const App = () => {

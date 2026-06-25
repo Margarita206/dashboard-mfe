@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import './index.css'
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import AuthMfe from "./mfes/AuthMfe";
+import Dashboard from "./mfes/Dashboard";
 
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
     return (
         <Router>
             <Routes>
-                <Route path={'/dashboard'} element={<AuthMfe/>}/>
+                <Route path={'/dashboard'} element={<Dashboard/>}/>
             </Routes>
 
         </Router>
