@@ -10,7 +10,7 @@ const App = () => {
     return (
         <Router>
             <Routes>
-                <Route path={'/auth'} element={<AuthMfe/>}/>
+                <Route path={'/dashboard'} element={<AuthMfe/>}/>
             </Routes>
 
         </Router>

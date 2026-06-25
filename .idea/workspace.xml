@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fa11b22f-d497-45a8-b9dd-b14effa006bb" name="Changes" comment="" />
+    <list default="true" id="fa11b22f-d497-45a8-b9dd-b14effa006bb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/auth/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/.env.development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/.env.production" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/.npmrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/deployments/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/deployments/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/deployments/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/deployments/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/deployments/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/deployments/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/deployments/nginx-http.conf" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/deployments/nginx-http.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/deployments/nginx-https.conf" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/deployments/nginx-https.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/rspack.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/rspack.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/components/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/components/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/components/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/components/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/react-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/src/react-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/host/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/host/src/App.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,24 +45,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Study/portfolio/dashboard-mfe/auth&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Study\\portfolio\\dashboard-mfe\\host\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "dashboard",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Study/portfolio/dashboard-mfe/auth",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\Study\\portfolio\\dashboard-mfe\\host\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Study\portfolio\dashboard-mfe\auth" />

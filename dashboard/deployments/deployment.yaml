@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-mfe
+  name: dashboard-mfe
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth-mfe
+      app: dashboard-mfe
   template:
     metadata:
       labels:
-        app: auth-mfe
+        app: dashboard-mfe
     spec:
       containers:
-        - name: auth-mfe
-          image: 192.168.101.30:8443/server-ui-v2-image/auth-mfe
+        - name: dashboard-mfe
+          image: 192.168.101.30:8443/server-ui-v2-image/dashboard-mfe
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -25,17 +25,17 @@ spec:
       volumes:
         - name: tls-cert
           secret:
-            secretName: auth-mfe-tls
+            secretName: dashboard-mfe-tls
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-mfe
+  name: dashboard-mfe
 spec:
   type: NodePort
   selector:
-    app: auth-mfe
+    app: dashboard-mfe
   ports:
     - name: http
       port: 443
