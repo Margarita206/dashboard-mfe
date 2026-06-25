@@ -6,7 +6,6 @@ import {ModuleFederationPlugin} from "@module-federation/enhanced/rspack";
 // @ts-ignore
 import {dependencies, name} from './package.json'
 import * as path from "node:path";
-import {DotenvPlugin} from "rspack-plugin-dotenv";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -74,6 +73,12 @@ export default defineConfig({
         server: 'https',
     },
     plugins: [
+        new rspack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify(isDev ? 'development' : 'production'),
+            'process.env.VITE_MFE_REMOTES_SOURCE': JSON.stringify(
+                process.env.VITE_MFE_REMOTES_SOURCE || 'http://localhost:3001'
+            ),
+        }),
         new rspack.HtmlRspackPlugin({
             template: "./index.html"
         }),
@@ -100,13 +105,11 @@ export default defineConfig({
                 "react-router-dom": {singleton: true, requiredVersion: dependencies['react-router-dom'], eager: true},
             }
         }),
-        new DotenvPlugin({
-            path: path.resolve(__dirname, envFile),
-        }),
-        //@ts-ignore
+              //@ts-ignore
         isDev ? new ReactRefreshRspackPlugin() : null
     ].filter(Boolean),
     optimization: {
+        nodeEnv: isDev ? 'development' : 'production',
         minimizer: [
             new rspack.SwcJsMinimizerRspackPlugin(),
             new rspack.LightningCssMinimizerRspackPlugin({

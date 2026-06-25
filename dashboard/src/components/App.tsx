@@ -1,9 +1,7 @@
-import React from 'react'
-
 import '../index.css'
-import LoginPage from "./LoginPage";
+import Dashboard from "./Dashboard.tsx";
 
 const App = () => {
-    return <LoginPage/>
+    return <Dashboard/>
 }
 export default App

@@ -19,7 +19,6 @@ const Mfe = (props: IMfeProps & any) => {
     const Remote = useDynamicFederation(remoteUrl,scope, component)
 
     if (!Remote) return <LoadingComponent/>
-    console.log('remote props', rest)
     return <MfeWrap><Remote {...rest}/></MfeWrap>
 }
 

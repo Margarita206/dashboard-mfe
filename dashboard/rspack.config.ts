@@ -6,7 +6,6 @@ import {ModuleFederationPlugin} from "@module-federation/enhanced/rspack";
 // @ts-ignore
 import {dependencies, name} from './package.json'
 import * as path from "node:path";
-import {DotenvPlugin} from "rspack-plugin-dotenv";
 
 
 const isDev = process.env.NODE_ENV === "development";
@@ -93,13 +92,11 @@ export default defineConfig({
                 "react-router-dom": {singleton: true, requiredVersion: dependencies['react-router-dom']},
             }
         }),
-        new DotenvPlugin({
-            path: path.resolve(__dirname, envFile),
-        }),
         //@ts-ignore
         isDev ? new ReactRefreshRspackPlugin() : null
     ].filter(Boolean),
     optimization: {
+        nodeEnv: isDev ? 'development' : 'production',
         minimizer: [
             new rspack.SwcJsMinimizerRspackPlugin(),
             new rspack.LightningCssMinimizerRspackPlugin({
