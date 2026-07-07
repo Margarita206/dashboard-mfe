@@ -87,22 +87,61 @@ export default defineConfig({
             filename: 'remoteEntry.js',
             remotes: {},
             shared: {
-                'antd': {singleton: true, requiredVersion: dependencies['antd']},
+                'react': {
+                    singleton: true,
+                    requiredVersion: dependencies['react'],
+                    eager: true
+                },
+                'react-dom': {
+                    singleton: true,
+                    requiredVersion: dependencies['react-dom'],
+                    eager: true
+                },
+                'react-router-dom': {
+                    singleton: true,
+                    requiredVersion: dependencies['react-router-dom'],
+                    eager: true
+                },
                 '@mui/material': {
                     singleton: true,
-                    requiredVersion: dependencies['@mui/material'],
+                    requiredVersion: dependencies['@mui/material']
                 },
                 '@emotion/react': {
                     singleton: true,
-                    requiredVersion: dependencies['@emotion/react'],
+                    requiredVersion: dependencies['@emotion/react']
                 },
                 '@emotion/styled': {
                     singleton: true,
-                    requiredVersion: dependencies['@emotion/styled'],
+                    requiredVersion: dependencies['@emotion/styled']
                 },
-                "react": {singleton: true, requiredVersion: dependencies['react'], eager: true},
-                "react-dom": {singleton: true, requiredVersion: dependencies['react-dom'], eager: true},
-                "react-router-dom": {singleton: true, requiredVersion: dependencies['react-router-dom'], eager: true},
+                'antd': {
+                    singleton: true,
+                    requiredVersion: dependencies['antd']
+                },
+                'framer-motion': {
+                    singleton: true,
+                    requiredVersion: dependencies['framer-motion']
+                },
+                'jotai': {
+                    singleton: true,
+                    requiredVersion: dependencies['jotai']
+                },
+                'axios': {
+                    singleton: true,
+                    requiredVersion: dependencies['axios']
+                },
+                'eventemitter3': {
+                    singleton: true,
+                    requiredVersion: dependencies['eventemitter3']
+                },
+                'react-use-websocket': {
+                    singleton: true,
+                    requiredVersion: dependencies['react-use-websocket']
+                },
+                'universal-cookie': {
+                    singleton: true,
+                    requiredVersion: dependencies['universal-cookie']
+                }
             }
         }),
               //@ts-ignore
