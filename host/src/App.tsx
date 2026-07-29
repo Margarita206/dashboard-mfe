@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 
 const Dashboard = lazy(() => import("./mfes/Dashboard.tsx"));
+const Faq = lazy(()=> import("./mfes/Faq.tsx"))
 
 const App = () => {
 
@@ -16,6 +17,12 @@ const App = () => {
                         <Dashboard/>
                     </React.Suspense>
                 }/>
+                <Route path="faq" element={
+                    <React.Suspense fallback={<div>Loading...</div>}>
+                        <Faq />
+                    </React.Suspense>
+                } />
+
 
                 <Route path="*" element={<h2>Page Not Found</h2>} />
             </Routes>
