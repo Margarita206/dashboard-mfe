@@ -15,6 +15,11 @@ const envFile = isDev ? '.env.development' : '.env.production'
 // Target browsers, see: https://github.com/browserslist/browserslist
 const targets = ["chrome >= 87", "edge >= 88", "firefox >= 78", "safari >= 14"];
 
+function getRemoteUrl(envVar, defaultUrl) {
+    return process.env[envVar] || defaultUrl;
+}
+
+
 export default defineConfig({
     context: __dirname,
     entry: {
@@ -78,7 +83,10 @@ export default defineConfig({
         new ModuleFederationPlugin({
             name: name,
             filename: 'remoteEntry.js',
-            remotes: {},
+            remotes: {
+                Dashboard: `Dashboard@${getRemoteUrl('DASHBOARD_REMOTE_URL', 'http://localhost:3001/remoteEntry.js')}`,
+                FAQ: `FAQ@${getRemoteUrl('FAQ_REMOTE_URL', 'http://localhost:3003/remoteEntry.js')}`
+            },
             exposes: {
                 './App': './src/App.tsx'
             },
