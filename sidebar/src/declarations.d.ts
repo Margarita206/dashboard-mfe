@@ -4,7 +4,7 @@ declare module 'FAQ/App' {
     export default Component;
 }
 
-declare module 'Dashboard/Dashboard' {
+declare module 'Dashboard/App' {
     const Component: React.ComponentType<any>;
     export default Component;
 }

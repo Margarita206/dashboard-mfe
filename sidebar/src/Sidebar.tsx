@@ -6,7 +6,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { MyProSidebarProvider } from "./pages/SidebarProvider";
 import Topbar from "./pages/topbar/Topbar";
 
-// const Dashboard = lazy(() => import('Dashboard/Dashboard'));
+const Dashboard = lazy(() => import('Dashboard/App'));
 const FAQ = lazy(() => import('FAQ/App'));
 
 interface SidebarProps {
@@ -37,7 +37,7 @@ interface SidebarProps {
 const DefaultRoutes = () => (
     <Suspense fallback={<div>Загрузка...</div>}>
         <Routes>
-            {/*<Route index element={<Dashboard />} />*/}
+            <Route index element={<Dashboard />} />
             <Route path="faq" element={<FAQ />} />
             <Route path="*" element={<h2>Page Not Found</h2>} />
         </Routes>
