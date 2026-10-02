@@ -1,5 +1,4 @@
 import React, { useState, createContext, useContext, ReactNode } from "react";
-import Sidebar from "../Sidebar";
 import { Outlet } from "react-router-dom";
 
 interface SidebarContextType {
@@ -17,10 +16,14 @@ interface MyProSidebarProviderProps {
     children: ReactNode;
 }
 
-export const MyProSidebarProvider = ({ children }: MyProSidebarProviderProps) => {
+export const MyProSidebarProvider = ({
+                                         children,
+                                     }: MyProSidebarProviderProps) => {
     const [sidebarRTL, setSidebarRTL] = useState<boolean>(false);
-    const [sidebarBackgroundColor, setSidebarBackgroundColor] = useState<string | undefined>(undefined);
-    const [sidebarImage, setSidebarImage] = useState<string | undefined>(undefined);
+    const [sidebarBackgroundColor, setSidebarBackgroundColor] =
+        useState<string | undefined>(undefined);
+    const [sidebarImage, setSidebarImage] =
+        useState<string | undefined>(undefined);
 
     return (
         <SidebarContext.Provider
@@ -39,7 +42,6 @@ export const MyProSidebarProvider = ({ children }: MyProSidebarProviderProps) =>
                     flexDirection: sidebarRTL ? "row-reverse" : "row",
                 }}
             >
-                <Sidebar />
                 <div style={{ height: "100%", width: "100%" }}>
                     <main>
                         {children}
@@ -53,8 +55,12 @@ export const MyProSidebarProvider = ({ children }: MyProSidebarProviderProps) =>
 
 export const useSidebarContext = (): SidebarContextType => {
     const context = useContext(SidebarContext);
+
     if (context === undefined) {
-        throw new Error("useSidebarContext must be used within a MyProSidebarProvider");
+        throw new Error(
+            "useSidebarContext must be used within a MyProSidebarProvider"
+        );
     }
+
     return context;
 };

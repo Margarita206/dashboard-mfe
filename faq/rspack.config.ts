@@ -68,7 +68,7 @@ export default defineConfig({
         ]
     },
     devServer: {
-        port: 3002,
+        port: 3003,
         server: 'https',
     },
     plugins: [

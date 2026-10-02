@@ -73,7 +73,7 @@ export default defineConfig({
         ]
     },
     devServer: {
-        port: 3003,
+        port: 3002,
         server: 'https',
     },
     plugins: [
@@ -84,8 +84,11 @@ export default defineConfig({
             name: name,
             filename: 'remoteEntry.js',
             remotes: {
-                Dashboard: `Dashboard@${getRemoteUrl('DASHBOARD_REMOTE_URL', 'http://localhost:3001/remoteEntry.js')}`,
-                FAQ: `FAQ@${getRemoteUrl('FAQ_REMOTE_URL', 'http://localhost:3003/remoteEntry.js')}`
+                Dashboard: `dashboard_mfe@https://localhost:3001/remoteEntry.js`,
+                FAQ: `faq_mfe@${getRemoteUrl(
+                    'FAQ_REMOTE_URL',
+                    'https://localhost:3003/remoteEntry.js'
+                )}`
             },
             exposes: {
                 './App': './src/App.tsx'
