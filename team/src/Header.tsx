@@ -1,18 +1,39 @@
-import {Box, useTheme} from "@mui/material";
-import {tokens} from "./theme.ts";
-import Typography from "@mui/material/Typography";
+import { Box, Typography, useTheme } from "@mui/material";
+import { tokens } from "./theme";
 
-export const Header = ({title, subtitle}: { title: string, subtitle: string }) => {
+interface HeaderProps {
+    title: string;
+    subtitle?: string;
+}
+
+const Header = ({ title, subtitle }: HeaderProps) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+
     return (
         <Box>
-            <Typography>
+            <Typography
+                variant="h2"
+                sx={{
+                    color: colors.grey[100],
+                    fontWeight: 700,
+                }}
+            >
                 {title}
             </Typography>
-            <Typography variant="h5" color={colors.greenAccent[400]}>
-                {subtitle}
-            </Typography>
+
+            {subtitle && (
+                <Typography
+                    variant="h5"
+                    sx={{
+                        color: colors.greenAccent[400],
+                    }}
+                >
+                    {subtitle}
+                </Typography>
+            )}
         </Box>
     );
 };
+
+export default Header;
