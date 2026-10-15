@@ -5,6 +5,8 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 const Dashboard = lazy(() => import("./mfes/Dashboard.tsx"));
 const Faq = lazy(()=> import("./mfes/Faq.tsx"))
+const Team = lazy(() => import('./mfes/Team.tsx'));
+
 
 const App = () => {
 
@@ -20,6 +22,12 @@ const App = () => {
                 <Route path="faq" element={
                     <React.Suspense fallback={<div>Loading...</div>}>
                         <Faq />
+                    </React.Suspense>
+                } />
+
+                <Route path="team" element={
+                    <React.Suspense fallback={<div>Loading...</div>}>
+                        <Team />
                     </React.Suspense>
                 } />
 
