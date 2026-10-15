@@ -76,3 +76,4 @@ auth_mfe/.env.production.local
 
 faq/.env.development.local
 faq/.env.production.local
+sidebar/@mf-types/
